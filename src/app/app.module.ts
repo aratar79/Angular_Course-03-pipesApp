@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-
-// PrimeNG
-import {ButtonModule} from 'primeng/button';
-import {CardModule} from 'primeng/card';
+// Modulos personalizados
+import { AppRouterModule } from './app-router.module';
+import { SharedModule } from './shared/shared.module';
+import { VentasModule } from './ventas/ventas.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +14,9 @@ import {CardModule} from 'primeng/card';
   ],
   imports: [
     BrowserModule,
-    ButtonModule,
-    CardModule
+    AppRouterModule,
+    SharedModule,
+    VentasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
