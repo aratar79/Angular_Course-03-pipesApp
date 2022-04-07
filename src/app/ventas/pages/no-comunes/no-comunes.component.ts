@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -10,17 +11,20 @@ export class NoComunesComponent {
   //i18nSelect
   personaActual: persona = {
     nombre: 'Susana',
-    genero: 'femenino'
+    genero: 'femenino',
+    edad:  37
   };
   susana: persona = {
     nombre: 'Susana',
-    genero: 'femenino'
+    genero: 'femenino',
+    edad: 44
 
   };
 
   pedro: persona = {
     nombre: 'Pedro',
-    genero: 'masculino'
+    genero: 'masculino',
+    edad:22
   };
 
   invitacionMapa = {
@@ -87,16 +91,33 @@ export class NoComunesComponent {
 
   quitarClientes(): void {
 
-    if (this.badge < 1) this.clientesPlural = ['Maria', 'Pedro', 'Juan'];
+    if (this.badge < 1) this.clientesPlural = ['Maria', 'Pedro', 'Juan', 'Alberto'];
     this.clientesPlural.pop();
     this.badge = this.clientesPlural.length;
 
-    
-
   }
+
+  //KeyValuePipe
+  keyValuePersona: persona = {
+    nombre: 'Antonio',
+    genero: 'masculino',
+    edad: 18
+  }
+
+
+  // Async pipe
+  miObservable = interval(1000);
+
+  promesa = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+      resolve('tenemos data de promesa');
+    }, 3500);
+  });
 }
 
 interface persona {
   nombre: string;
   genero: string;
+  edad: number;
 }
