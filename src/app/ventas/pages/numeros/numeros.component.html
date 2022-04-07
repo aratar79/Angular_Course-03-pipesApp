@@ -1,1 +1,31 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1>Pipe decimal</h1>
+    <p>
+        Pipes incluídos en Angular - En el Common Module
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-12 md:col-4">
+        <p-card
+            header="Ventas netas"
+            subheader="del presente año">
+            <i class="pi pi-euro"></i>
+             {{numVentas | number:'1.2-2'}} // 1.es la parte entera 2-2 de dos a dos decimales n to n - Ojo!! redondea
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card
+            header="Ventas Brutas"
+            subheader="del presente año">
+             {{numVentas + 2000000 | currency:'USD':'symbol-narrow':'1.0-4'}} 
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card
+            header="Porcentaje de beneficios"
+            subheader="del presente año">
+             {{porcentaje | percent:'2.2-2'}} 
+        </p-card>
+    </div>
+</div>
