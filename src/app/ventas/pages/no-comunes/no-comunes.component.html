@@ -75,6 +75,7 @@
             </pre>
             <pre>
                 <span *ngIf="!(promesa | async)">Cargando data....</span>
+                <!-- ponemos la negacióon con parentesis pq sino sería la negación de la promesa -->
                 {{promesa | async}}
             </pre>
         </p-fieldset>       

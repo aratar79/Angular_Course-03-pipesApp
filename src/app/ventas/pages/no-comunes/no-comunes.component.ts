@@ -12,7 +12,7 @@ export class NoComunesComponent {
   personaActual: persona = {
     nombre: 'Susana',
     genero: 'femenino',
-    edad:  37
+    edad: 37
   };
   susana: persona = {
     nombre: 'Susana',
@@ -24,7 +24,7 @@ export class NoComunesComponent {
   pedro: persona = {
     nombre: 'Pedro',
     genero: 'masculino',
-    edad:22
+    edad: 22
   };
 
   invitacionMapa = {
@@ -36,15 +36,11 @@ export class NoComunesComponent {
 
   get personaje(): persona {
 
-    if (this.personaActual.nombre === 'Susana') {
-      return this.pedro;
-    }
-    else {
-      return this.susana;
-    }
+    return (this.personaActual.nombre === 'Susana') ? this.pedro : this.susana;
   }
 
   cambiarGenero(): void {
+    
     if (this.personaActual.nombre === 'Susana') {
       this.personaActual = this.pedro;
       this.iconPersona = 'pi pi-user';
@@ -74,14 +70,12 @@ export class NoComunesComponent {
   get iconUsers(): string {
 
     switch (this.clientesPlural.length) {
-      
+
       case 0: {
         return '';
-        break;
       }
       case 1: {
         return 'pi pi-user';
-        break;
       }
       default: {
         return 'pi pi-users'
