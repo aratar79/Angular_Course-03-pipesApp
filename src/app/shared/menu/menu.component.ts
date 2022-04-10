@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,8 +10,9 @@ import { MenuItem } from 'primeng/api';
 export class MenuComponent implements OnInit {
 
   items: MenuItem[] = [];
+  menuTheme: boolean = false;
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
     this.items = [
@@ -41,6 +43,19 @@ export class MenuComponent implements OnInit {
         routerLink: 'ordenar'
       }
     ];
+    this.menuTheme = false;
+  }
+
+  public clickBonusChecked(e:any) {
+    // const menuTheme = e.checked;
+    this.menuTheme = e.checked;
+     if (this.menuTheme) {
+      this.themeService.switchTheme('saga-blue');
+      //  this.menuTheme = true;
+     }
+     else {
+      this.themeService.switchTheme('vela-blue');
+     }
   }
 }
 

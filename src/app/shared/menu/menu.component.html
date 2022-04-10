@@ -1,3 +1,7 @@
 <p-menubar [model]="items">
-    <img src="./favicon.ico" alt=""/>
+    <ng-template pTemplate="end">
+        <p-inputSwitch class="mr-3" (onChange)="clickBonusChecked($event)" onLabel="yes" offLabel="no">
+        </p-inputSwitch>
+        <img src="./favicon.ico" alt="" />
+    </ng-template>
 </p-menubar>

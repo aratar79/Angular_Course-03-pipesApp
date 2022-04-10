@@ -8,6 +8,7 @@ import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 })
 export class OrdenarComponent implements OnInit {
 
+
   enMayusculas: boolean = true;
   orderBy: string = '';
   heroes: Heroe[] = [
@@ -50,5 +51,6 @@ export class OrdenarComponent implements OnInit {
   cambiarOrden(valor: string) {
     this.orderBy = valor;
   }
+
 
 }
